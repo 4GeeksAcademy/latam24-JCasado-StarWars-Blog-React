@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Cards } from "../component/cards";
+import { Context } from "../store/appContext";
+import starwarsImage from "../../img/star-wars.png";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+
+	const { store, actions } = useContext(Context)
+	return (
+		// Contenedor Padre de lo personajes "Characters"
+		<div className="bg-dark d-flex flex-column">
+			<h1 className="tittleCharacter text-danger"><strong>Characters</strong></h1>
+			<div className="fatherCharacter d-flex ">
+			{store.characters.map((character) => {
+					return (<Cards img={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} item={character.properties} key={character._id} type={"characters"} id={character.uid} />)})}
+			</div>
+
+			{/* Contenedor Padre de lo planetas "Planets" */}
+			<div className="Planets">
+				<h1 className="tittleCharacter text-danger"><strong>Planets</strong></h1>
+				<div className="fatherCharacter d-flex text-center mt-5">
+				{store.planets.map((planet) => {
+					return (<Cards img={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} item={planet.properties} key={planet._id} type={"planets"} id={planet.uid} />)})}
+
+				</div>
+
+			</div>
+		</div>
+	);
+};
