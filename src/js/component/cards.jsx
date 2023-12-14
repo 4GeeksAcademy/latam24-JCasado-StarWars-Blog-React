@@ -1,9 +1,7 @@
 import React, { Component, useContext } from "react";
 import { Link } from "react-router-dom";
-// import "../../styles/home.css";
 import { useNavigate } from "react-router";
 import { Context } from "../store/appContext";
-
 
 export const Cards = (props) => {
 	const { actions } = useContext(Context)
