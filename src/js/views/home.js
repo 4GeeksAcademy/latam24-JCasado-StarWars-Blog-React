@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import { Cards } from "../component/cards";
-impoort { Context } from "../store/appContext.js";
+import { Cards } from "../component/cards.js";
+import { Context } from "../store/appContext.js";
 
 export const Home = () => {
     const { store, actions } = useContext(Context)
@@ -9,9 +9,9 @@ export const Home = () => {
         <div>
             <div className="character m-5 bg-transparent"> 
             <h1 className="titleCharacter text-danger mt-3">Characters</h1>
-            <div className="faatherCharacter" d-flex text-center mt-5 gap-3>
-                {store.characters.map((character) => {
-                    return (<Cards item={character} key={character.id} types={"characters"} />)
+            <div className="faatherCharacter d-flex text-center mt-5 gap-3">
+                {store.characters.map((character, id) => {
+                    return (<Cards item={character} key={id} types={"characters"} />)
                 })}
 
             </div>
@@ -21,8 +21,8 @@ export const Home = () => {
                     <h1 className="titlePlanets text-danger mt-5">Planets</h1>
                     <div className="fatherPlanets d-flex text-center mt-5 gap-3">
 
-                        {store.planets.map((planets) = > {
-                            return (<Cards item={planets} key={planets.id} types={"planets"} />)
+                        {store.planets.map((planet, id) => {
+                            return (<Cards item={planet} key={id} types={"planet"} />)
                         })}
                     </div>
                 </div>

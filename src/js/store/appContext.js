@@ -1,7 +1,7 @@
-import React { useState, useEffect } from "react";
-import getState from "./flux.jsx";
+import React, { useState, useEffect } from "react";
+import getState from "./flux";
 
-export const = React.createContext(null);
+export const Context = React.createContext(null);
 
 const injectContext = PassedComponent => {
 
@@ -21,7 +21,7 @@ const injectContext = PassedComponent => {
 		useEffect(() => {
 
 			state.actions.getCharacters()
-			setState.actions.getPlanets()
+			state.actions.getPlanets()
 
 		}, [])
 

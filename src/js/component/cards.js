@@ -7,7 +7,6 @@ export const Cards = (descrip) => {
 	const { store, actions } = useContext(Context)
 
 	const {name, gender, hair_color, eyes_color, population, terrain, diameter } = descrip.item.properties
-	console.log(descrip.item)
 
 	return (
 		<div className="container_card  bg-transparent">
@@ -43,7 +42,7 @@ export const Cards = (descrip) => {
 					}
 					
 					<div className="container_button d-flex justify-content-between mt-5 gap-3">
-						<Link to={`/demo/${descrip.types}/${descrip.item.uid}`} className="btn btn-outline-danger d-flex mr-5">Read more</Link>
+						<Link to={`/demo/${descrip.types}/${descrip.item.uid}`} className="btn btn-outline-danger d-flex mr-5">Knowladge is Power</Link>
 						<button href="#" className="btn btn-outline-warning m-auto align-items-center fas fa-heart text-danger" 
 
 						onClick={() => {actions.getFavorites(descrip.item.properties.name)}}></button>

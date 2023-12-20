@@ -19,6 +19,6 @@ export const Single = prop => {
         </div>
     );
 };
-   Single.PropTypes = {
+   Single.propTypes = {
         match: PropTypes.object
    }; 

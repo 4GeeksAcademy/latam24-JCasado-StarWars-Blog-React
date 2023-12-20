@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams} from "react-router-dom";
 
-import { Context } from "../component/Infcard.jsx";
+import { Infcard } from "../component/infCard.js";
 
-import {Infcard} from "../store/appContext.js"
+import { Context} from "../store/appContext.js"
 
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 	const { inf, id } = useParams()
-	const [Items, setItem] = useState({})
+	const [item, setItem] = useState({})
 	const getItem = () => {
 		const item = store[inf].find(element => element.uid == id)
 		setItem(item)
