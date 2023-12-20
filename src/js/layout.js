@@ -1,35 +1,33 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+import scrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
-import { Details } from "./views/details";
-import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import { Demo } from "./views/demo.jsx";
+import { Home } from "./views/home.jsx";
+import { Single } from "./views/single.jsx";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+import { Navbar } from "./views/navbar.jsx"
+import { Cards } from "./views/cards.jsx";
+import { Footer } from "./views/footer.jsx";
 
 const Layout = () => {
-
-	const basename = process.env.BASENAME || "";
-
-	return (
-		<div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/details/:nature/:id" element={<Details />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
-	);
+    const basename = process.env.BASENAME || "";
+    return (
+        <div>
+            <BrowserRouter basename={basename}>
+                <scrollToTop>
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/demo/:inf:id" element={<Demo />} />
+                        <Route path="/single/:theid" element{<Single />} />
+                        <Route path="" element={<h1>Lost in space</h1>} />
+                    </Routes>
+                </scrollToTop>
+            </BrowserRouter>
+        </div>
+    );
 };
 
 export default injectContext(Layout);

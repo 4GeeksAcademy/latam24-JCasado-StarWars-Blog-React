@@ -1,32 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React { useState, useEffect } from "react";
 import getState from "./flux.jsx";
 
-// Don't change, here is where we initialize our context, by default it's just going to be null.
-export const Context = React.createContext(null);
+export const = React.createContext(null);
 
 const injectContext = PassedComponent => {
+
 	const StoreWrapper = props => {
-		const [state, setState] = useState(
+		const [ state, setState] = useState(
 			getState({
 				getStore: () => state.store,
 				getActions: () => state.actions,
 				setStore: updatedStore =>
-					setState({
-						store: Object.assign(state.store, updatedStore),
-						actions: { ...state.actions }
-					})
+				setState({
+					store: Object.assign(state.store, updatedStore),
+					actions: { ...state.actions }
+				})
 			})
 		);
 
 		useEffect(() => {
+
 			state.actions.getCharacters()
-			state.actions.getPlanets()
-		}, []);
+			setState.actions.getPlanets()
+
+		}, [])
 
 		return (
 			<Context.Provider value={state}>
 				<PassedComponent {...props} />
-			</Context.Provider>
+				</Context.Provider>
 		);
 	};
 	return StoreWrapper;
