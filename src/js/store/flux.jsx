@@ -65,8 +65,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return i != id;
 				})})
 			},
-
-			
 		}
 	}
 };

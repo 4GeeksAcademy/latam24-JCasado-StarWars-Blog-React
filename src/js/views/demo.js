@@ -71,7 +71,6 @@ export const Demo = () => {
 							<p className="text-start-danger m-0">Edited: {item?.properties?.edited}</p>
 						</div>
 					):(
-
 					    <div>
 							<p className="text-start-danger m-0">Name: {item?.properties?.name}</p>
 							<p className="text-start-danger m-0">Gender: {item?.properties?.gender}</p>

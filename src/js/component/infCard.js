@@ -18,7 +18,6 @@ export const Infcard = (descripD) => {
                 <p>heigth: {heigth}</p>
                 <p>mass: {mass}</p>
             </div>
-
         </div>
-    )
-}
+    );
+};

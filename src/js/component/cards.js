@@ -15,6 +15,7 @@ export const Cards = (descrip) => {
 				<img src={"https://starwars-visualguide.com/assets/img/${descrip.types}/${descrip.item.uid}.jpg"}
 
 					onError={(event)=>{
+						
 						event.target.src="https://starwars-visualguide.com/#/planets/9"
 					}}
 				

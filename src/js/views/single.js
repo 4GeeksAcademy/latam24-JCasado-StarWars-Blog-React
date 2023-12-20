@@ -20,5 +20,5 @@ export const Single = prop => {
     );
 };
    Single.PropTypes = {
-    match: PropTypes.object
+        match: PropTypes.object
    }; 
