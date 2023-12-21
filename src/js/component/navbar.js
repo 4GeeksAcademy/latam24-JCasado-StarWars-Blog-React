@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { ButtonFavourites } from "./button";
+import imgLogo from "../../img/logo-starwars.png";
 
 export const Navbar = () => {
 	
@@ -13,7 +13,7 @@ export const Navbar = () => {
 		<div>
 			<nav className=" navbar navbar-light bg-black mb-1 justify-content-between p-2">
 					<Link to="/">
-						<img className="logo" src="logo.star.wars1.png"/>
+						<img className="logo" src={imgLogo}></img>
 					</Link>
 				<div className="ml-auto">
 					<Link to="/demo">
@@ -22,7 +22,7 @@ export const Navbar = () => {
 						
 					</div>
 				</div>
-			</nav>
+			</nav>s
 		</div>
 	);
 };

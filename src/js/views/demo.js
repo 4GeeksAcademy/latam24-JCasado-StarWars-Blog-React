@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams} from "react-router-dom";
-
-import { Infcard } from "../component/infCard.js";
-
+import { useParams } from "react-router-dom";
 import { Context} from "../store/appContext.js"
 
 export const Demo = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 	const { inf, id } = useParams()
 	const [item, setItem] = useState({})
 	const getItem = () => {
@@ -28,9 +25,9 @@ export const Demo = () => {
 					</div>
 					<div className="col-md-8">
 					<div className="card-body">
-						<h5 className="card-title  text-white">{item?.properties?.name} history</h5>
+						<h5 className="card-title  text-white">{item?.properties?.name}History</h5>
 					</div>
-						<p className="card-text text-white"> Jorge is a Programming Jedi! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p className="card-text text-white">Jorge is a Programming Padawan! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
 					</div>
 				</div>
@@ -73,11 +70,9 @@ export const Demo = () => {
 					):(
 					    <div>
 							<p className="text-start-danger m-0">Name: {item?.properties?.name}</p>
-							<p className="text-start-danger m-0">Gender: {item?.properties?.gender}</p>
 							<p className="text-start-danger m-0">Eye color: {item?.properties?.eye_color}</p>
 							<p className="text-start-danger m-0">Hair color: {item?.properties?.hair_color}</p>
 							<p className="text-start-danger m-0">Height: {item?.properties?.height}</p>
-							<p className="text-start-danger m-0">Mass: {item?.properties?.mass}</p>
 							<p className="text-start-danger m-0">Birth year: {item?.properties?.birth_year}</p>
 							<p className="text-start-danger m-0">Homeworld: {item?.properties?.homeworld}</p>
 							<p className="text-start-danger m-0">Created: {item?.properties?.created}</p>

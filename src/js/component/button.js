@@ -11,7 +11,7 @@ export const ButtonFavourites = () => {
         <div ClassName="dropdown">
             <button ClassName="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown">
                 Favourites 
-                <span className="position-absolute top-1 start-90  badge rounded-circle bg-warning ">
+                <span className="position-absolute top-1 start-90 badge rounded-circle bg-warning ">
                         {favourites.length}
                     </span>
                 </button>
@@ -19,7 +19,7 @@ export const ButtonFavourites = () => {
                 <ul ClassName="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                 {favourites.length === 0 ? (
 
-                    <li><span ClassName="dropdown-item"> No favourites selected yet </span></li>
+                    <li><span ClassName="dropdown-item">No favourites selected yet</span></li>
 
                 ) : (
 
@@ -29,7 +29,7 @@ export const ButtonFavourites = () => {
                             <span ClassName="dropdown-items text-light">{item}</span>
 
                             <button type="button" ClassName="btn btn-outline-danger ms-2"
-                            onClick={() => {actions.removeFavorites(id)}}>
+                            onClick={ () => {actions.removeFavorites(id)} }>
                             <i ClassName="fa fa-trash"></i>
                             </button>
                         </li>

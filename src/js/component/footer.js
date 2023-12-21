@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React, { Component } from "react";
 
 export const Footer = () => (
 	<footer className="footer bg-transparent mt-auto py-3 text-light">
