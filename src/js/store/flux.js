@@ -18,7 +18,7 @@ const getState = ({ getStore, setStore }) => {
 						data.results.forEach(async (element) => {
 							let responseElement = await fetch(`${store.API_URL}/people/${element.uid}`)
 							let dataItem = await responseElement.json()
-							setStore({characters: [...store.characters , dataItem.result ] })
+							setStore({characters: [...store.characters, dataItem.result ] })
 						});
 					}
 				} catch (error) {

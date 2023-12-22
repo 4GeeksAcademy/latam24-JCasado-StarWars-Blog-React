@@ -25,10 +25,9 @@ export const Demo = () => {
 					</div>
 					<div className="col-md-8">
 					<div className="card-body">
-						<h5 className="card-title  text-white">{item?.properties?.name}History</h5>
+						<h5 className="card-title text-white">{item?.properties?.name}History</h5>
 					</div>
 						<p className="card-text text-white">Jorge is a Programming Padawan! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
 					</div>
 				</div>
 				</div>
@@ -39,7 +38,7 @@ export const Demo = () => {
 					Description
 				</button>
 				</h2>
-				<div id="collapseOne" className="accordion-collapse collapse show " data-bs-parent="#accordionExample">
+				<div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
 				<div className="accordion-body">
 					{item?.description}
 				</div>
@@ -51,7 +50,7 @@ export const Demo = () => {
 					General
 				</button>
 				</h2>
-				<div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+			<div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
 				<div className="accordion-body text-light">
 
 				{
@@ -83,7 +82,7 @@ export const Demo = () => {
 					</div>
 				</div>
 			</div>
-			</div>
 		</div>
+	</div>
 	);
 };

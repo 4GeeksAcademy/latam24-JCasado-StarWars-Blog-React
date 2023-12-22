@@ -6,7 +6,6 @@ import imgLogo from "../../img/logo-starwars.png";
 export const Navbar = () => {
 	
 	const { store, actions } = useContext(Context)
-
 	const favourites = store.favorites;
 
 	return (
@@ -19,7 +18,6 @@ export const Navbar = () => {
 					<Link to="/demo">
 					</Link>
 					<div className="btn-group">
-						
 					</div>
 				</div>
 			</nav>s

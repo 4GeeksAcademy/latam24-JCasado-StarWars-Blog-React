@@ -2,16 +2,15 @@ import React, {useState, useContext}  from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-
 export const Cards = (descrip) => {
 	const { store, actions } = useContext(Context)
 
-	const {name, height, eye_color, hair_color, population, terrain, diameter} = descrip.item.properties
-
+	const {name, height, eye_color, hair_color, gravity, terrain, diameter} = descrip.item.properties
+	const img = descrip.types == "planets" & descrip.item.uid == 1 ? `${descrip.types}/2`: `${descrip.types}/${descrip.item.uid}`
 	return (
 		<div className="container_card  bg-transparent">
 			<div className="card bg-transparent d-flex justify-content-center aling-item-center">
-				<img src={`https://starwars-visualguide.com/assets/img/${descrip.types}/${descrip.item.uid}.jpg`}
+				<img src={`https://starwars-visualguide.com/assets/img/${img}.jpg`}
 								
 				className="card-img-top" alt="..." />
 				
@@ -19,11 +18,10 @@ export const Cards = (descrip) => {
 					<h5 className="card-title text-light">{name}</h5>
 					
 					{
-				
-						descrip.types == "planets" ?(
+						descrip.types == "planets" ? (
 
 							<div>
-								<p className="text-start text-light m-0">Population: {population}</p>
+								<p className="text-start text-light m-0">Gravity: {gravity}</p>
 								<p className="text-start text-light m-0">Terrain: {terrain}</p>
 								<p className="text-start text-light m-0">Diameter: {diameter}</p>
 							</div>
@@ -41,7 +39,6 @@ export const Cards = (descrip) => {
 						<button href="#" className="btn btn-outline-warning m-auto align-items-center fas fa-heart text-danger" 
 
 						onClick={ () => {actions.getFavorites(descrip.item.properties.name)} }></button>
-
 					</div>
 				</div>
 			</div>
