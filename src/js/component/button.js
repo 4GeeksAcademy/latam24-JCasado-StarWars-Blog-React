@@ -1,42 +1,36 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext.js";
 
 export const ButtonFavourites = () => {
-    const {store, actions} = useContext(Context);
-
-    const favourites = store.favourites;
+    const { store, actions } = useContext(Context);
 
     return (
-
-        <div ClassName="dropdown">
-            <button ClassName="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Favourites 
-                <span className="position-absolute top-1 start-90 badge rounded-circle bg-warning ">
-                        {favourites.length}
-                    </span>
+        <div>
+            <div className="btn-group dropstart">
+                <button type="button" className="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Favourites {store.favorites.length}
                 </button>
+                <ul className="dropdown-menu text-black">
+                    {store.favorites.length === 0 ? (
+                        <li><span className="dropdown-item">No favourites selected yet</span></li>
 
-                <ul ClassName="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                {favourites.length === 0 ? (
+                    ) : (
 
-                    <li><span ClassName="dropdown-item">No favourites selected yet</span></li>
+                        store.favorites.map((item, id) => (
 
-                ) : (
+                            <li key={id} className="d-flex justify-content-between m-2  ">
+                                <span className="dropdown-items text-black">{item} </span>
 
-                    favourites.map((item, id) => (
-
-                        <li key={id} ClassName="d-flex justify-content-between m-2  ">
-                            <span ClassName="dropdown-items text-light">{item}</span>
-
-                            <button type="button" ClassName="btn btn-outline-danger ms-2"
-                            onClick={ () => {actions.removeFavorites(id)} }>
-                            <i ClassName="fa fa-trash"></i>
-                            </button>
-                        </li>
-                    ))                
-                )
-                }
-            </ul>
+                                <button type="button" className="btn btn-outline-danger ms-2"
+                                    onClick={() => { actions.removeFavorites(id) }}>
+                                    <i className="fa fa-trash"></i>
+                                </button>
+                            </li>
+                        ))
+                    )
+                    }
+                </ul>
+            </div>
         </div>
-     );
+    );
 };

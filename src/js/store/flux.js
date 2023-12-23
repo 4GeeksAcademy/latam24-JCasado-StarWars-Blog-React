@@ -1,28 +1,28 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			characters: [],
+			starships: [],
 			planets: [],
 			favorites: [],
 			API_URL: "https://www.swapi.tech/api",
 		},
 
 		actions: {
-			getCharacters: async () => {
-				const store = getStore()
+			getStarships: async function () {
+				const store = getStore();
 				try {
-					const response = await fetch(`${store.API_URL}/people`)
+					const response = await fetch(`${store.API_URL}/starships`);
 					if (response.ok) {
-						const data = await response.json()
-						console.log(data.results)
-						data.results.forEach(async (element) => {
-							let responseElement = await fetch(`${store.API_URL}/people/${element.uid}`)
-							let dataItem = await responseElement.json()
-							setStore({characters: [...store.characters, dataItem.result ] })
+						const data = await response.json();
+						console.log(data.results);
+						data.results.forEach(async function (element) {
+							let responseElement = await fetch(`${store.API_URL}/starships/${element.uid}`);
+							let dataItem = await responseElement.json();
+							setStore({ starships: [...store.starships, dataItem.result] });
 						});
 					}
 				} catch (error) {
-					console.log(error)
+					console.log(error);
 				}
 
 			},
@@ -33,11 +33,11 @@ const getState = ({ getStore, setStore }) => {
 					if (response.ok) {
 						const data = await response.json()
 						console.log(data.results)
-						data.results.forEach(async (element) => {
-							let responseElement = await fetch(`${store.API_URL}/planets/${element.uid}`)
-							let dataItem = await responseElement.json()
-							console.log(dataItem)
-							setStore({planets: [...store.planets , dataItem.result ]  })
+						data.results.forEach(async function (element) {
+							let responseElement = await fetch(`${store.API_URL}/planets/${element.uid}`);
+							let dataItem = await responseElement.json();
+							console.log(dataItem);
+							setStore({ planets: [...store.planets, dataItem.result] });
 						});
 					}
 				} catch (error) {
@@ -47,22 +47,22 @@ const getState = ({ getStore, setStore }) => {
 			},
 			getFavorites: (inf) => {
 				const store = getStore()
-				const path = store.favorites.some((item)=> inf == item)
+				const path = store.favorites.some((item) => inf == item)
 				console.log(path)
-				if (path){
+				if (path) {
 					const fav = store.favorites.filter((item) => inf != item)
-					setStore({favorites: fav})
+					setStore({ favorites: fav })
 
-				}else {
-					setStore({favorites: [...store.favorites, inf]})
-					
+				} else {
+					setStore({ favorites: [...store.favorites, inf] })
 				}
 			},
-
-			removeFavorites: (id) => {
-				setStore({favorites: getStore().favorites.filter((item, i) => {
-					return i != id;
-				})})
+			removeFavorites: function (id) {
+				setStore({
+					favorites: getStore().favorites.filter((item, i) => {
+						return i != id;
+					})
+				});
 			},
 		}
 	}

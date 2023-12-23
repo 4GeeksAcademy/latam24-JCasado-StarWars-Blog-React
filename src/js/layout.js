@@ -8,8 +8,6 @@ import { Home } from "./views/home";
 import { Single } from "./views/single";
 
 import { Navbar } from "./component/navbar"
-import { Cards } from "./component/cards";
-import { Footer } from "./component/footer";
 
 const Layout = () => {
     const basename = process.env.BASENAME || "";
@@ -20,9 +18,9 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/demo/:inf:id" element={<Demo />} />
+                        <Route path="/demo/:inf/:id" element={<Demo />} />
                         <Route path="/single/:theid" element={<Single />} />
-                        <Route path="" element={<h1>Lost in space</h1>} />
+                        <Route path="*" element={<h1>Lost in space</h1>} />
                     </Routes>
                 </ScrollToTop>
             </BrowserRouter>
