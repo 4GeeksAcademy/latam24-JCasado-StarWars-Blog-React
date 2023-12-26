@@ -8,6 +8,7 @@ import { Home } from "./views/home";
 import { Single } from "./views/single";
 
 import { Navbar } from "./component/navbar"
+import { Footer } from "./component/footer";
 
 const Layout = () => {
     const basename = process.env.BASENAME || "";
