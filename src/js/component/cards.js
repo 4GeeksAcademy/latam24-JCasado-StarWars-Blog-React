@@ -6,7 +6,7 @@ import imgLogo from "../../img/Starwars_logo.png";
 export const Cards = (descrip) => {
 	const { actions } = useContext(Context)
 
-	const { name, model, gravity, terrain } = descrip.item.properties
+	const { name, model, birth_year, hyperdrive_rating, gravity, terrain } = descrip.item.properties
 	const img = `${descrip.types}/${descrip.item.uid}`
 	return (
 
@@ -30,21 +30,22 @@ export const Cards = (descrip) => {
 					)}{descrip.types == "starships" && (
 						<div>
 							<p className="text-start text-light m-0">Model: {model}</p>
+							<p className="text-start text-light m-0">Hyperdrive: {hyperdrive_rating}</p>
 						</div>
 					)
 				}{descrip.types == "people" && (
 					<div>
 						<p className="text-start text-light m-0">Name: {name}</p>
+						<p className="text-start text-light m-0">Birth day: {birth_year}</p>
 					</div>
 				)
 				}
+			</div>
+			<div className="container_button d-flex justify-content-between mx-2 mt-5 gap-3">
+				<Link to={`/demo/${descrip.types}/${descrip.item.uid}`} className="btn btn-outline-dark text-primary d-flex mr-5">Know more</Link>
+				<button href="#" className="btn btn-outline-dark m-auto align-items-center fas fa-heart text-danger mx-1"
 
-				<div className="container_button d-flex justify-content-between mt-5 gap-3">
-					<Link to={`/demo/${descrip.types}/${descrip.item.uid}`} className="btn btn-outline-danger d-flex mr-5">Know more</Link>
-					<button href="#" className="btn btn-outline-warning m-auto align-items-center fas fa-heart text-danger"
-
-						onClick={() => { actions.getFavorites(descrip.item.properties.name) }}></button>
-				</div>
+					onClick={() => { actions.getFavorites(descrip.item.properties.name) }}></button>
 			</div>
 		</div>
 	);

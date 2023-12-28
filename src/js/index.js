@@ -8,4 +8,4 @@ import "../styles/index.css";
 
 const root = createRoot(document.querySelector("#app"))
 
-root.render(<Layout/>)
+root.render(<Layout />);

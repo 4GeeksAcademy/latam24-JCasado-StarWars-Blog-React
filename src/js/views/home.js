@@ -7,8 +7,8 @@ export const Home = () => {
     return (
 
         <div className="bg-dark">
-            <div className="Starship m-5 bg-transparent">
-                <h1 className="titleStarship text-danger mt-3">Starships</h1>
+            <div className="Starship m-4 bg-transparent">
+                <h1 className="titleStarship text-danger mt-5">Starships</h1>
                 <div className="py-2 overflow-auto">
                     <div className="d-flex flex-row flex-nowrap">
                         {store.starships.map((starships, id) => {
@@ -17,7 +17,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="planets m-5 bg-transparent">
+            <div className="planets m-4 bg-transparent">
                 <h1 className="titlePlanets text-danger mt-5">Planets</h1>
                 <div className="py-2 overflow-auto">
                     <div className="d-flex flex-row flex-nowrap">
@@ -27,11 +27,10 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="planets m-5 bg-transparent">
-                <h1 className="titlePlanets text-danger mt-5">Characters</h1>
+            <div className="characters m-4 bg-transparent">
+                <h1 className="titleCharacters text-danger mt-5">Characters</h1>
                 <div className="py-2 overflow-auto">
                     <div className="d-flex flex-row flex-nowrap">
-
                         {store.people.map((people, id) => {
                             return (<Cards item={people} key={id} types={"characters"} />)
                         })}

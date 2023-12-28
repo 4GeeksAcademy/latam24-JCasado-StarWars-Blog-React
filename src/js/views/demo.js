@@ -33,14 +33,14 @@ export const Demo = () => {
 							<div className="card-body">
 								<h5 className="card-title text-white">{item?.properties?.name}History</h5>
 							</div>
-							<p className="card-text text-white"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p className="container_card mx-3 card-text text-white"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 						</div>
 					</div>
 				</div>
 				<div className="accordion" id="accordionExample">
 					<div className="accordion-item bg-transparent text-light">
 						<h2 className="accordion-header">
-							<button className="accordion-button bg-transparent text-light fw-bold fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<button className="accordion-button bg-success text-light fw-bold fs-3 mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 								Description
 							</button>
 						</h2>
@@ -52,7 +52,7 @@ export const Demo = () => {
 					</div>
 					<div className="accordion-item bg-transparent text-light">
 						<h2 className="accordion-header">
-							<button className="accordion-button collapsed bg-transparent text-light fw-bold fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<button className="accordion-button collapsed bg-success text-light fw-bold fs-3 mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 								General
 							</button>
 						</h2>

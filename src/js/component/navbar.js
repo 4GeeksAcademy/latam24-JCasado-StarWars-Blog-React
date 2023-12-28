@@ -9,7 +9,7 @@ export const Navbar = () => {
 		<div>
 			<nav className=" navbar navbar-dark bg-black mb-1 justify-content-between p-2">
 				<Link to="/">
-					<img width="50" height="50" className="d-inline-block align-top" alt="Logo" src={imgLogo}></img>
+					<img width="95" height="70" className="d-inline-block align-top mx-3" alt="Logo" src={imgLogo}></img>
 				</Link>
 				<div className="ml-auto">
 					<ButtonFavourites />
