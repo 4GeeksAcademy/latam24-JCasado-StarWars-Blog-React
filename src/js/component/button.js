@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext.js";
 
-export const ButtonFavourites = () => {
+export const ButtonFavorites = () => {
     const { store, actions } = useContext(Context);
 
     return (
         <div>
             <div className="btn-group dropstart mx-3">
                 <button type="button" className="btn btn-outline-grey text-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Favourites {store.favorites.length}
+                    Favorites {store.favorites.length}
                 </button>
                 <ul className="dropdown-menu bg-transparent text-danger">
                     {store.favorites.length === 0 ? (
-                        <li><span className="dropdown-item bg-transparent text-danger">No favourites selected yet</span></li>
+                        <li><span className="dropdown-item bg-transparent text-danger">No favorites selected yet</span></li>
 
                     ) : (
 

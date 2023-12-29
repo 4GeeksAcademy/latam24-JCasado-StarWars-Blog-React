@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import imgLogo from "../../img/logo-starwars.png";
-import { ButtonFavourites } from "./button";
+import { ButtonFavorites } from "./button";
 
 export const Navbar = () => {
 
@@ -12,7 +12,7 @@ export const Navbar = () => {
 					<img width="95" height="70" className="d-inline-block align-top mx-3" alt="Logo" src={imgLogo}></img>
 				</Link>
 				<div className="ml-auto">
-					<ButtonFavourites />
+					<ButtonFavorites />
 				</div>
 			</nav>
 		</div>

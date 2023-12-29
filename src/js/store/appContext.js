@@ -22,7 +22,7 @@ const injectContext = PassedComponent => {
 			state.actions.getStarships()
 			state.actions.getPlanets()
 			state.actions.getPeople()
-			
+
 		}, [])
 
 		return (

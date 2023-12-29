@@ -65,7 +65,7 @@ const getState = ({ getStore, setStore }) => {
 				}
 
 			},
-			getFavorites: (inf) => {
+			getFavourites: (inf) => {
 				const store = getStore()
 				const path = store.favorites.some((item) => inf == item)
 				console.log(path)
