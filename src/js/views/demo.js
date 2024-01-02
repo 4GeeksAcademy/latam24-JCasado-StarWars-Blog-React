@@ -8,12 +8,12 @@ export const Demo = () => {
 	const { inf, id } = useParams()
 	const [item, setItem] = useState({})
 	const getItem = () => {
-		const item = store[inf].find(element => element.uid == id)
+
+		const item = store[inf == "characters" ? "people" : inf]?.find(element => element.uid == id)
 		setItem(item)
 	}
-
+	console.log(inf);
 	console.log(item);
-
 	useEffect(() => {
 		getItem()
 	}, [store[inf]])
@@ -88,7 +88,7 @@ export const Demo = () => {
 											<p className="text-start-danger m-0">Starship class: {item?.properties?.starship_class}</p>
 										</div>
 									)
-								}{inf == "people" && (
+								}{inf == "characters" && (
 									<div>
 										<p className="text-start-danger m-0">Name: {item?.properties?.name}</p>
 										<p className="text-start-danger m-0">Height: {item?.properties?.height}</p>

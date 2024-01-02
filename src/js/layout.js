@@ -23,6 +23,7 @@ const Layout = () => {
                         <Route path="/single/:theid" element={<Single />} />
                         <Route path="*" element={<h1>Lost in space</h1>} />
                     </Routes>
+                    <Footer />
                 </ScrollToTop>
             </BrowserRouter>
         </div>
