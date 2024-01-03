@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
 export const Footer = () => (
-	<footer className="footer bg-transparent mt-auto py-3 text-light">
-		<p>
-			Made by{""}
-			<a href="#">Jedi Master Jorge Casado</a>
-		</p>
-	</footer>
+	<div className="card bg-black d-flex justify-content-between container_card">
+		<footer className="footer bg-transparent text-succes py-3">
+			<p>
+				<strong> Made by {" "}
+					<a href="#"> Jedi Master Jorge Casado </a></strong>
+			</p>
+		</footer>
+	</div>
 );
