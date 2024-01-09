@@ -45,7 +45,7 @@ export const Cards = (descrip) => {
 				<Link to={`/demo/${descrip.types}/${descrip.item.uid}`} className="btn btn-outline-dark text-primary d-flex mr-5">Know more</Link>
 				<button href="#" className="btn btn-outline-dark m-auto align-items-center fas fa-heart text-danger mx-1"
 
-					onClick={() => { actions.getFavorites(descrip.item.properties.name) }}></button>
+					onClick={() => { actions.getFavourites(descrip.item.properties.name) }}></button>
 			</div>
 		</div>
 	);
